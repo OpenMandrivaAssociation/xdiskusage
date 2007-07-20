@@ -9,6 +9,8 @@ Release: 	%{release}
 License: 	GPL
 Group: 		File tools
 Source0: 	http://xdiskusage.sourceforge.net/%{name}-%{version}.tgz
+# fixes x86_64 build errors: by AdamW 2007/07
+Patch0:		xdiskusage-1.48-x86_64.patch
 URL: 		http://xdiskusage.sourceforge.net
 BuildRequires: 	fltk-devel
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -24,6 +26,7 @@ version of the display.
 
 %prep
 %setup -q
+%patch0 -p1 -b .x86_64
 
 %build
 %configure2_5x
