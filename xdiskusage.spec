@@ -13,6 +13,9 @@ Source0: 	http://xdiskusage.sourceforge.net/%{name}-%{version}.tgz
 Patch0:		xdiskusage-1.48-x86_64.patch
 URL: 		http://xdiskusage.sourceforge.net
 BuildRequires: 	fltk-devel
+BuildRequires:	mesaglu-devel
+BuildRequires:	libxinerama-devel
+BuildRequires:	libxext-devel
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Obsoletes:	xdu
 Provides:	xdu
