@@ -16,7 +16,6 @@ BuildRequires: 	fltk-devel
 BuildRequires:	mesaglu-devel
 BuildRequires:	libxinerama-devel
 BuildRequires:	libxext-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Obsoletes:	xdu
 Provides:	xdu
 
