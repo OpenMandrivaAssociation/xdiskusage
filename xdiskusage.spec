@@ -1,6 +1,6 @@
 %define name	xdiskusage
 %define version	1.48
-%define release	%mkrel 5
+%define release	%mkrel 6
 
 Summary: 	Graphical display of disk usage
 Name: 		%{name}
