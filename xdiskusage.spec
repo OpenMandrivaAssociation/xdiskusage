@@ -1,22 +1,19 @@
-%define name	xdiskusage
-%define version	1.48
-%define release	%mkrel 7
-
 Summary: 	Graphical display of disk usage
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
+Name: 		xdiskusage
+Version: 	1.48
+Release: 	8
 License: 	GPL
 Group: 		File tools
+URL: 		http://xdiskusage.sourceforge.net
 Source0: 	http://xdiskusage.sourceforge.net/%{name}-%{version}.tgz
 # fixes x86_64 build errors: by AdamW 2007/07
 Patch0:		xdiskusage-1.48-x86_64.patch
-URL: 		http://xdiskusage.sourceforge.net
+
 BuildRequires: 	fltk-devel
-BuildRequires:	mesaglu-devel
-BuildRequires:	libxinerama-devel
-BuildRequires:	libxext-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xinerama)
+
 Obsoletes:	xdu
 Provides:	xdu
 
@@ -36,27 +33,13 @@ version of the display.
 %make
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_mandir}/man1
 %makeinstall
 ln -s %{name} %{buildroot}%{_bindir}/xdu
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
-%clean
-rm -fr %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_bindir}/xdu
 %{_mandir}/man1/%{name}.1*
+
