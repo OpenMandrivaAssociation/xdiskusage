@@ -4,7 +4,7 @@ Version: 	1.48
 Release: 	8
 License: 	GPL
 Group: 		File tools
-URL: 		http://xdiskusage.sourceforge.net
+URL: 		https://xdiskusage.sourceforge.net
 Source0: 	http://xdiskusage.sourceforge.net/%{name}-%{version}.tgz
 # fixes x86_64 build errors: by AdamW 2007/07
 Patch0:		xdiskusage-1.48-x86_64.patch
